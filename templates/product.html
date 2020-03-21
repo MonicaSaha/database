@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{items.Name}}</title>
+</head>
+<body>
+    {% if items != None %}
+            <h1> Product Name </h1>
+            <h4> {{items.Name}}</h4>
+            <h4>Category= {{items.categories}}</h4>
+            <p> <b> Discription </b> = {{items.Discription}}</p>
+            <h1> Specification </h1>
+            Brand = {{messages.Brand}}
+            </br>
+            Weight = {{messages.Weight}}
+
+    {% else %}
+
+         <h1>Item Does Not Exist </h1>
+
+    {% endif %}
+
+    <a href="{% url 'Index' %}"> <h3>BACK</h3> </a>
+
+
+
+
+</body>
+</html>
