@@ -5,11 +5,18 @@
     <title>Home Page</title>
 </head>
 <body>
-        <h1> Product List </h1>
-        {% for message in messages %}
-          <img src="{{message.Image.url}}" alt="Sorry image not found">
-            <p><b>{{message.Product_Id}}</b><a href=" {% url 'Item' item_id=message.Product_Id %}"> {{message.Name}} </a></p>
-            <br>
-        {% endfor %}
+       {% if messages != None %}
+            <h1> Product List </h1>
+           {% for message in messages %}
+
+               <img src="{{message.Image.url}}" alt="Sorry image not found">
+       <h1><b>{{message.Product_Id}}</b><a href=" {% url 'Item' item_id=message.Product_Id %}"> {{message.Name}} </a></h1>
+               <br>
+           {% endfor %}
+       {% else %}
+
+                <h1> No product Exist in the database plz insert data into database </h1>
+
+       {% endif %}
 </body>
 </html>

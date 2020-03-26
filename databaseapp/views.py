@@ -6,9 +6,11 @@ from .models import *
 
 
 def index(request):
-    context = {
-        'messages': Product.objects.all()
-    }
+    try:
+         msg= Product.objects.all()
+    except Product.DoesNotExist:
+        msg = None
+    context = {'messages': msg}
     return render(request, 'index.html', context)
     # template = loader.get_template('index.html')
     # context = {
@@ -31,7 +33,7 @@ def item(request, item_id):
         'messages': message
     }
 
-    return render(request, 'product.html', context )
+    return render(request, 'product.html', context)
 
 
 
