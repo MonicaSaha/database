@@ -17,12 +17,13 @@ class Product(models.Model):
     categories= models.ForeignKey(Category,on_delete=models.CASCADE)
     Product_Id = models.AutoField(primary_key=True)
     Name = models.CharField(max_length=100)
-    Image = models.ImageField(upload_to="image",default=" ")
+    Image = models.ImageField(upload_to="image", default=" ")
     Discount = models.IntegerField(default=0)
     Price = models.IntegerField(default=0)
     Discription = models.CharField(max_length=5000)
     Type = models.CharField(max_length=100)
     Key_Features = models.CharField(max_length=5000)
+    url=models.URLField(max_length=5000, default=' ')
 
     def __str__(self):
         return self.Name

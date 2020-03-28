@@ -11,8 +11,8 @@
             <h1> Product List </h1>
            {% for message in messages %}
 
-               <img src="{{message.Image.url}}" alt="Sorry image not found">
-       <h1><b>{{message.Product_Id}}</b><a href=" {% url 'Item' item_id=message.Product_Id %}"> {{message.Name}} </a></h1>
+               <img src="{{message.url}}" alt="Sorry image not found">
+       <h3><b>{{message.Product_Id}}</b><a href=" {% url 'Item' item_id=message.Product_Id %}"> {{message.Name}} </a></h3>
                <br>
            {% endfor %}
        {% else %}
